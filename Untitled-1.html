@@ -1,0 +1,445 @@
+// ...existing code...
+<!-- Mobile Menu -->
+<div id="mobile-menu" class="hidden md:hidden px-6 pt-2 pb-4">
+  <a href="#home" class="block py-2 text-gray-600 hover:text-green-700">Home</a>
+  <a href="#services" class="block py-2 text-gray-600 hover:text-green-700"
+    >Problems</a
+  >
+  <a
+    href="#advanced-techniques"
+    class="block py-2 text-gray-600 hover:text-green-700"
+    >Advanced Techniques</a
+  >
+  <a href="#gallery" class="block py-2 text-gray-600 hover:text-green-700"
+    >Gallery</a
+  >
+  <a href="#about" class="block py-2 text-gray-600 hover:text-green-700"
+    >About</a
+  >
+
+  <!-- Added: Login/Register buttons for mobile menu -->
+  <div class="mt-4 flex gap-2">
+    <button
+      id="mobile-login-btn"
+      class="w-1/2 bg-green-700 text-white font-bold py-2 px-4 rounded-lg hover:bg-green-800 transition"
+    >
+      Login
+    </button>
+    <button
+      id="mobile-register-btn"
+      class="w-1/2 bg-white text-green-700 font-bold py-2 px-4 rounded-lg border border-green-700 hover:bg-green-50 transition"
+    >
+      Register
+    </button>
+  </div>
+</div>
+// ...existing code...
+<!-- Farmer Modal (hidden by default) -->
+<div
+  id="farmer-modal"
+  class="fixed inset-0 hidden z-50 items-center justify-center bg-black bg-opacity-50"
+>
+  <div class="bg-white rounded-lg max-w-3xl w-full p-6 relative mx-4">
+    <button
+      id="farmer-modal-close"
+      class="absolute right-4 top-4 text-gray-500 hover:text-gray-800"
+      aria-label="Close profile"
+    >
+      &times;
+    </button>
+    <div class="flex flex-col md:flex-row gap-6">
+      <img
+        id="modal-image"
+        src=""
+        alt=""
+        class="w-full md:w-48 h-48 rounded-lg object-cover"
+      />
+      <div class="flex-1">
+        <h3
+          id="modal-name"
+          class="text-2xl font-playfair font-bold text-green-800"
+        ></h3>
+        <p id="modal-specialties" class="text-sm text-gray-600 mt-1"></p>
+        <p id="modal-experience" class="text-sm text-gray-600 mt-1"></p>
+        <div id="modal-bio" class="ai-content-style mt-4 text-gray-700"></div>
+        <div class="mt-6 flex flex-wrap gap-2">
+          <a
+            id="modal-contact-email"
+            class="inline-block px-4 py-2 bg-green-700 text-white rounded hover:bg-green-600"
+            href="#"
+            >Email</a
+          >
+          <a
+            id="modal-call"
+            class="inline-block px-4 py-2 border border-green-700 text-green-700 rounded hover:bg-green-50"
+            href="#"
+            >Call</a
+          >
+          <button
+            id="modal-schedule"
+            class="inline-block px-4 py-2 bg-yellow-500 text-white rounded hover:bg-yellow-400"
+          >
+            Schedule Consultation
+          </button>
+          <button
+            id="modal-follow"
+            class="inline-block px-4 py-2 border border-green-700 text-green-700 rounded hover:bg-green-50"
+          >
+            Follow
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Added: Auth Modal (Login / Register) -->
+<div
+  id="auth-modal"
+  class="fixed inset-0 hidden z-60 items-center justify-center bg-black bg-opacity-50"
+>
+  <div class="bg-white rounded-lg max-w-md w-full p-6 relative mx-4">
+    <button
+      id="auth-modal-close"
+      class="absolute right-4 top-4 text-gray-500 hover:text-gray-800"
+      aria-label="Close auth"
+    >
+      &times;
+    </button>
+
+    <div class="mb-4 flex gap-2">
+      <button
+        id="auth-tab-login"
+        class="flex-1 py-2 rounded-md bg-green-700 text-white font-medium"
+      >
+        Login
+      </button>
+      <button
+        id="auth-tab-register"
+        class="flex-1 py-2 rounded-md bg-white text-green-700 border border-green-700 font-medium"
+      >
+        Register
+      </button>
+    </div>
+
+    <div id="auth-forms">
+      <form id="auth-login-form" class="space-y-4">
+        <div>
+          <label class="block text-sm text-gray-700">Email</label>
+          <input
+            type="email"
+            id="auth-login-email"
+            class="w-full px-3 py-2 border rounded"
+            required
+          />
+        </div>
+        <div>
+          <label class="block text-sm text-gray-700">Password</label>
+          <input
+            type="password"
+            id="auth-login-password"
+            class="w-full px-3 py-2 border rounded"
+            required
+          />
+        </div>
+        <div class="text-right">
+          <button
+            type="submit"
+            class="bg-green-700 text-white px-4 py-2 rounded"
+          >
+            Sign in
+          </button>
+        </div>
+      </form>
+
+      <form id="auth-register-form" class="space-y-4 hidden">
+        <div>
+          <label class="block text-sm text-gray-700">Full name</label>
+          <input
+            type="text"
+            id="auth-register-name"
+            class="w-full px-3 py-2 border rounded"
+            required
+          />
+        </div>
+        <div>
+          <label class="block text-sm text-gray-700">Email</label>
+          <input
+            type="email"
+            id="auth-register-email"
+            class="w-full px-3 py-2 border rounded"
+            required
+          />
+        </div>
+        <div>
+          <label class="block text-sm text-gray-700">Password</label>
+          <input
+            type="password"
+            id="auth-register-password"
+            class="w-full px-3 py-2 border rounded"
+            required
+          />
+        </div>
+        <div class="text-right">
+          <button
+            type="submit"
+            class="bg-green-700 text-white px-4 py-2 rounded"
+          >
+            Create account
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+// ...existing code...
+<script>
+  // --- UI Elements ---
+  const mobileMenuButton = document.getElementById("mobile-menu-button");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const contactForm = document.getElementById("contact-form");
+  // ...existing code...
+  window.addEventListener("resize", () => {
+    resizeCanvas();
+    createParticles();
+  });
+
+  // --- Added: Auth modal behavior (Login/Register) ---
+  const mobileLoginBtn = document.getElementById("mobile-login-btn");
+  const mobileRegisterBtn = document.getElementById("mobile-register-btn");
+  const authModal = document.getElementById("auth-modal");
+  const authModalClose = document.getElementById("auth-modal-close");
+  const authTabLogin = document.getElementById("auth-tab-login");
+  const authTabRegister = document.getElementById("auth-tab-register");
+  const authLoginForm = document.getElementById("auth-login-form");
+  const authRegisterForm = document.getElementById("auth-register-form");
+
+  function openAuthModal(tab = "login") {
+    if (!authModal) return;
+    authModal.classList.remove("hidden");
+    authModal.classList.add("flex");
+    setAuthTab(tab);
+  }
+
+  function closeAuthModal() {
+    if (!authModal) return;
+    authModal.classList.add("hidden");
+    authModal.classList.remove("flex");
+  }
+
+  function setAuthTab(tab) {
+    if (!authTabLogin || !authTabRegister) return;
+    if (tab === "register") {
+      authTabRegister.classList.add("bg-green-700", "text-white");
+      authTabRegister.classList.remove("bg-white", "text-green-700");
+      authTabLogin.classList.remove("bg-green-700", "text-white");
+      authTabLogin.classList.add("bg-white", "text-green-700");
+      authRegisterForm.classList.remove("hidden");
+      authLoginForm.classList.add("hidden");
+    } else {
+      authTabLogin.classList.add("bg-green-700", "text-white");
+      authTabLogin.classList.remove("bg-white", "text-green-700");
+      authTabRegister.classList.remove("bg-green-700", "text-white");
+      authTabRegister.classList.add("bg-white", "text-green-700");
+      authLoginForm.classList.remove("hidden");
+      authRegisterForm.classList.add("hidden");
+    }
+  }
+
+  mobileLoginBtn &&
+    mobileLoginBtn.addEventListener("click", () => {
+      openAuthModal("login");
+      mobileMenu.classList.add("hidden");
+    });
+
+  mobileRegisterBtn &&
+    mobileRegisterBtn.addEventListener("click", () => {
+      openAuthModal("register");
+      mobileMenu.classList.add("hidden");
+    });
+
+  authTabLogin &&
+    authTabLogin.addEventListener("click", () => setAuthTab("login"));
+  authTabRegister &&
+    authTabRegister.addEventListener("click", () => setAuthTab("register"));
+
+  authModalClose && authModalClose.addEventListener("click", closeAuthModal);
+  authModal &&
+    authModal.addEventListener("click", (e) => {
+      if (e.target === authModal) closeAuthModal();
+    });
+  document.addEventListener("keydown", (e) => {
+    if (
+      e.key === "Escape" &&
+      authModal &&
+      !authModal.classList.contains("hidden")
+    ) {
+      closeAuthModal();
+    }
+  });
+
+  // Demo submit handlers (replace with real auth calls)
+  authLoginForm &&
+    authLoginForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      // perform login...
+      alert("Login submitted (demo)");
+      closeAuthModal();
+    });
+  authRegisterForm &&
+    authRegisterForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      // perform register...
+      alert("Registration submitted (demo)");
+      closeAuthModal();
+    });
+  // ...existing code...
+</script>
+// ...existing code...
+<script>
+  // New: Auth validation & simple client-side user store (localStorage)
+  (function () {
+    const loginForm = document.getElementById("auth-login-form");
+    const registerForm = document.getElementById("auth-register-form");
+    const registerName = document.getElementById("auth-register-name");
+    const registerEmail = document.getElementById("auth-register-email");
+    const registerPassword = document.getElementById("auth-register-password");
+    const loginEmail = document.getElementById("auth-login-email");
+    const loginPassword = document.getElementById("auth-login-password");
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const nameRegex = /^[A-Za-z\s]+$/;
+
+    async function hashPassword(pw) {
+      const enc = new TextEncoder();
+      const hashBuffer = await crypto.subtle.digest("SHA-256", enc.encode(pw));
+      const hashArray = Array.from(new Uint8Array(hashBuffer));
+      return hashArray.map((b) => b.toString(16).padStart(2, "0")).join("");
+    }
+    function getUsers() {
+      try {
+        return JSON.parse(localStorage.getItem("gn_users") || "[]");
+      } catch {
+        return [];
+      }
+    }
+    function saveUsers(u) {
+      localStorage.setItem("gn_users", JSON.stringify(u));
+    }
+
+    function showModalMessage(form, msg, isError = true) {
+      let el = form.querySelector(".auth-feedback");
+      if (!el) {
+        el = document.createElement("p");
+        el.className = "auth-feedback text-sm mt-2";
+        form.appendChild(el);
+      }
+      el.textContent = msg;
+      el.classList.toggle("text-red-600", isError);
+      el.classList.toggle("text-green-700", !isError);
+    }
+
+    registerForm &&
+      registerForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const name = (registerName.value || "").trim();
+        const email = (registerEmail.value || "").trim().toLowerCase();
+        const pw = registerPassword.value || "";
+        if (!name || !nameRegex.test(name)) {
+          showModalMessage(
+            registerForm,
+            "Enter a valid full name. Only letters and spaces."
+          );
+          return;
+        }
+        if (!email || !emailRegex.test(email)) {
+          showModalMessage(registerForm, "Enter a valid email.");
+          return;
+        }
+        if (pw.length < 8) {
+          showModalMessage(
+            registerForm,
+            "Password must be at least 8 characters."
+          );
+          return;
+        }
+        if (!/[0-9]/.test(pw) || !/[A-Za-z]/.test(pw)) {
+          showModalMessage(
+            registerForm,
+            "Password must include letters and numbers."
+          );
+          return;
+        }
+
+        const users = getUsers();
+        if (users.find((u) => u.email === email)) {
+          showModalMessage(
+            registerForm,
+            "An account with this email already exists."
+          );
+          return;
+        }
+
+        const pwHash = await hashPassword(pw);
+        users.push({ name, email, passwordHash: pwHash, created: Date.now() });
+        saveUsers(users);
+        showModalMessage(
+          registerForm,
+          "Account created. You may now log in.",
+          false
+        );
+        registerForm.reset();
+        // switch to login tab
+        if (typeof setAuthTab === "function") {
+          setTimeout(() => setAuthTab("login"), 800);
+        }
+      });
+
+    loginForm &&
+      loginForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const email = (loginEmail.value || "").trim().toLowerCase();
+        const pw = loginPassword.value || "";
+        if (!email || !emailRegex.test(email)) {
+          showModalMessage(loginForm, "Enter a valid email.");
+          return;
+        }
+        if (!pw) {
+          showModalMessage(loginForm, "Enter your password.");
+          return;
+        }
+
+        const users = getUsers();
+        const user = users.find((u) => u.email === email);
+        if (!user) {
+          showModalMessage(loginForm, "No account found for this email.");
+          return;
+        }
+
+        const pwHash = await hashPassword(pw);
+        if (pwHash !== user.passwordHash) {
+          showModalMessage(loginForm, "Incorrect password.");
+          return;
+        }
+
+        // success
+        localStorage.setItem(
+          "gn_current_user",
+          JSON.stringify({ email: user.email, name: user.name })
+        );
+        showModalMessage(loginForm, `Welcome, ${user.name}.`, false);
+        loginForm.reset();
+        if (typeof closeAuthModal === "function") {
+          setTimeout(() => closeAuthModal(), 600);
+        }
+      });
+
+    // Optional: helper to check logged in state and show in console
+    (function syncAuthUI() {
+      const cur = localStorage.getItem("gn_current_user");
+      if (cur) {
+        console.log("Logged in user:", JSON.parse(cur).email);
+      }
+    })();
+  })();
+</script>
